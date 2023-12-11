@@ -31,19 +31,19 @@ const SplashScreen2 = () => {
       <Video
         ref={video}
         style={styles.video}
-        source={{
-          uri: "https://emekaagara.com/wp-content/uploads/2023/04/pexels-cottonbro-studio-4008365-1080x2048-50fps.mp4",
-        }}
-        // source={require("../assets/instagramunfollowers.mp4")}
+        // source={{
+        //   uri: "https://emekaagara.com/wp-content/uploads/2023/04/pexels-cottonbro-studio-4008365-1080x2048-50fps.mp4",
+        // }}
+        source={require("../assets/meds.mp4")}
         shouldPlay
         resizeMode="cover"
         isLooping
         onPlaybackStatusUpdate={setStatus}
       />
 
-      <Text style={styles.mainText}>Unfollowers For Instagram</Text>
+      <Text style={styles.mainText}>Search Healthcare Specialists</Text>
       <Text style={styles.subText}>
-        Get a currated List of People that Unfollowed you on Instagram
+        Manage your medical history and track medical expenses with Beth AI
       </Text>
 
       <TouchableOpacity

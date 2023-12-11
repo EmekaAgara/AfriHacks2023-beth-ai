@@ -31,19 +31,16 @@ const SplashScreen1 = () => {
       <Video
         ref={video}
         style={styles.video}
-        source={{
-          uri: "https://emekaagara.com/wp-content/uploads/2023/04/pexels-cottonbro-studio-4008365-1080x2048-50fps.mp4",
-        }}
-        // source={require("../assets/instagramunfollowers.mp4")}
+        source={require("../assets/beth.mp4")}
         shouldPlay
         resizeMode="cover"
         isLooping
         onPlaybackStatusUpdate={setStatus}
       />
 
-      <Text style={styles.mainText}>Unfollowers For Instagram</Text>
+      <Text style={styles.mainText}>Beth AI HealthCare</Text>
       <Text style={styles.subText}>
-        Get a currated List of People that Unfollowed you on Instagram
+        Get healthcare advice and medical services online from Beth AI
       </Text>
 
       <TouchableOpacity
