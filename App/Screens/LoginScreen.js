@@ -66,7 +66,7 @@ export default function LoginScreen() {
       <View style={styles.root}>
         <Image
           // source={require("../assets/karah.png")}
-          source={require("../assets/karah.png")}
+          source={require("../assets/bethl.png")}
           style={[styles.logo, { height: height * 0.2 }]}
         />
         <Text style={styles.title}>Login to your account</Text>

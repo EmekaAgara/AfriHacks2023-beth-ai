@@ -105,7 +105,7 @@ export default function SignupScreen() {
           <View style={styles.root}>
             <Image
               // source={require("../assets/karah.png")}
-              source={require("../assets/karah.png")}
+              source={require("../assets/bethl.png")}
               style={[styles.logo, { height: height * 0.2 }]}
             />
             <Text style={styles.title}>Create an accountt</Text>
@@ -201,7 +201,7 @@ export default function SignupScreen() {
           <ActivityIndicator size="small" color="gray" animating={indicator} />
           <Image
             // source={require("../assets/karah.png")}
-            source={require("../assets/karah.png")}
+            source={require("../assets/bethl.png")}
             style={[styles.logo, { height: height * 0.2 }]}
           />
           <Text style={styles.title}>Enter Verification Code</Text>

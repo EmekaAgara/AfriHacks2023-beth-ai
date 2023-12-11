@@ -5,6 +5,7 @@ import {
   Button,
   StyleSheet,
   TouchableOpacity,
+  FlatList,
 } from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -12,6 +13,7 @@ import { useAuth, useUser } from "@clerk/clerk-expo";
 import { TextInput } from "react-native-gesture-handler";
 import { Ionicons } from "@expo/vector-icons";
 import CustomButton from "../Components/CustomButton";
+import Lottie from "lottie-react-native";
 
 export default function HomeScreen() {
   const { isLoaded, signOut } = useAuth();
@@ -30,13 +32,39 @@ export default function HomeScreen() {
   const BethPress = () => {
     navigation.navigate("BethScreen");
   };
+  const CardData = [
+    {
+      id: "3",
+      image: require("../assets/trade.json"),
+      description: "Ask Beth AI",
+      screen: "BethScreen",
+    },
+    {
+      id: "4",
+      image: require("../assets/transfer.json"),
+      description: "My Medical History",
+      screen: "BethScreen",
+    },
+    {
+      id: "5",
+      image: require("../assets/ben.json"),
+      description: "My Wallet",
+      screen: "BethScreen",
+    },
+    {
+      id: "6",
+      image: require("../assets/qr.json"),
+      description: "Others",
+      screen: "BethScreen",
+    },
+  ];
 
   return (
     <View style={styles.container} behavior="padding">
       <View style={styles.HeaderContainer}>
         <TouchableOpacity onPress={handlePress}>
           <Text style={styles.HelloText}>Hello {user.firstName}</Text>
-          <Text style={styles.descText1}>Welcome to Stride 👋 </Text>
+          <Text style={styles.descText1}>This is Beth 👋 </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.btnContainer} onPress={handlePress}>
@@ -60,7 +88,7 @@ export default function HomeScreen() {
           inputMode="email"
           value={emailAddress}
           onChangeText={setEmailAddress}
-          placeholder={"Email address"}
+          placeholder={"Search for a Specialist near you ?"}
           placeholderTextColor="#818589"
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
@@ -69,8 +97,33 @@ export default function HomeScreen() {
         <TouchableOpacity>
           <Ionicons name="search-circle" size={60} color="#aeaeae" />
         </TouchableOpacity>
-        <CustomButton text="Login" onPress={BethPress} />
       </View>
+      <Text style={styles.descText2}>Explore 🚀</Text>
+      <FlatList
+        horizontal
+        pagingEnabled
+        data={CardData}
+        keyExtractor={(item) => item.id}
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate(item.screen)}
+            style={styles.ServicesContainer}
+          >
+            <View style={styles.profileContainer}>
+              <View>
+                <Lottie
+                  source={item.image}
+                  autoPlay
+                  loop
+                  style={styles.serviceImg}
+                />
+              </View>
+              <Text style={styles.serviceText}>{item.description}</Text>
+            </View>
+          </TouchableOpacity>
+        )}
+      />
     </View>
   );
 }
@@ -240,12 +293,21 @@ const styles = StyleSheet.create({
     marginLeft: 0,
     paddingLeft: 16,
     justifyContent: "center",
+    // padding: "50",
   },
 
+  serviceText: {
+    color: "#898A8B",
+    fontSize: 12,
+    fontWeight: 400,
+    textAlign: "center",
+    paddingLeft: 0,
+    paddingBottom: 5,
+  },
   ServicesContainer: {
     backgroundColor: "#141518",
     flexDirection: "row",
-    padding: 9,
+    padding: 12,
     marginBottom: 16,
     marginRight: 12,
     paddingRight: 20,
@@ -254,7 +316,7 @@ const styles = StyleSheet.create({
   },
   serviceImg: {
     height: 55,
-    width: 35,
+    width: 55,
     resizeMode: "contain",
     alignSelf: "center",
   },
