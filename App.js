@@ -15,6 +15,7 @@ import * as SecureStore from "expo-secure-store";
 import ProfileScreen from "./App/Screens/ProfileScreen";
 import BethScreen from "./App/Screens/BethScreen";
 import Development from "./App/Screens/Development";
+import WalletScreen from "./App/Screens/WalletScreen";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -107,6 +108,13 @@ export default function App() {
             <Stack.Screen
               name="Development"
               component={Development}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="WalletScreen"
+              component={WalletScreen}
               options={{
                 headerShown: false,
               }}
