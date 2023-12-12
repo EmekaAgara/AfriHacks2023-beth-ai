@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   container_tertiary: {},
 
   text: {
-    fontWeight: 700,
+    // fontWeight: 700,
     color: "white",
   },
 

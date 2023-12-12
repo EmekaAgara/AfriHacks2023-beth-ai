@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
   HelloText: {
     color: "white",
     fontSize: 20,
-    fontWeight: 700,
+    // fontWeight: 700,
     textAlign: "center",
     paddingBottom: 1,
   },
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
   descText1: {
     color: "#898A8B",
     fontSize: 11,
-    fontWeight: 600,
+    // fontWeight: 600,
     textAlign: "left",
     paddingBottom: 20,
     paddingLeft: 0,

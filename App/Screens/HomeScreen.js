@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   HelloText: {
     color: "white",
     fontSize: 20,
-    fontWeight: 700,
+    // fontWeight: 700,
     textAlign: "left",
     paddingBottom: 7,
   },
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
   mainText: {
     color: "white",
     fontSize: 25,
-    fontWeight: 700,
+    // fontWeight: 700,
     textAlign: "left",
     paddingBottom: 10,
     paddingLeft: 0,
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
   descText: {
     color: "#898A8B",
     fontSize: 12,
-    fontWeight: 400,
+    // fontWeight: 400,
     textAlign: "left",
     paddingLeft: 0,
     paddingBottom: 5,
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
   acctText: {
     color: "#898A8B",
     fontSize: 12,
-    fontWeight: 300,
+    // fontWeight: 300,
     textAlign: "left",
     paddingLeft: 0,
 
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
   nameText: {
     color: "#898A8B",
     fontSize: 11,
-    fontWeight: 300,
+    // fontWeight: 300,
     textAlign: "left",
     paddingLeft: 0,
 
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
   descText1: {
     color: "#898A8B",
     fontSize: 13,
-    fontWeight: 600,
+    // fontWeight: 600,
     textAlign: "left",
     paddingBottom: 20,
     paddingLeft: 0,
@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
   descText2: {
     color: "#898A8B",
     fontSize: 15,
-    fontWeight: 400,
+    // fontWeight: 400,
     textAlign: "left",
     paddingTop: 10,
     paddingBottom: 20,
@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
   serviceText: {
     color: "#898A8B",
     fontSize: 12,
-    fontWeight: 400,
+    // fontWeight: 400,
     textAlign: "center",
     paddingLeft: 0,
     paddingBottom: 5,
@@ -271,7 +271,7 @@ const styles = StyleSheet.create({
   serviceText: {
     color: "#898A8B",
     fontSize: 12,
-    fontWeight: 400,
+    // fontWeight: 400,
     textAlign: "center",
     paddingLeft: 0,
     paddingBottom: 5,
