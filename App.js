@@ -14,6 +14,7 @@ import AuthScreen from "./App/Screens/AuthScreen";
 import * as SecureStore from "expo-secure-store";
 import ProfileScreen from "./App/Screens/ProfileScreen";
 import BethScreen from "./App/Screens/BethScreen";
+import Development from "./App/Screens/Development";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -98,6 +99,13 @@ export default function App() {
             <Stack.Screen
               name="BethScreen"
               component={BethScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Development"
+              component={Development}
               options={{
                 headerShown: false,
               }}
