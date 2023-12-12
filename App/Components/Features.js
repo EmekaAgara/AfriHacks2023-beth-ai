@@ -37,7 +37,7 @@ const data = [
   {
     id: "124",
     title: "Emergency Services",
-    // Lottie: require("../assets/trade.json"),
+    Lottie: require("../assets/Emergency.json"),
     image:
       "https://emekaagara.com/wp-content/uploads/2022/10/IMG_6727_5-removebg-preview-300x197.png",
     screen: "Development",
@@ -45,7 +45,7 @@ const data = [
   {
     id: "124",
     title: "My Medical Records",
-    // Lottie: require("../assets/trade.json"),
+    Lottie: require("../assets/Records.json"),
     image:
       "https://emekaagara.com/wp-content/uploads/2022/10/IMG_6727_5-removebg-preview-300x197.png",
     screen: "Development",
@@ -53,7 +53,7 @@ const data = [
   {
     id: "124",
     title: "My Wallet",
-    // Lottie: require("../assets/trade.json"),
+    Lottie: require("../assets/Wallet.json"),
     image:
       "https://emekaagara.com/wp-content/uploads/2022/10/IMG_6727_5-removebg-preview-300x197.png",
     screen: "Development",
