@@ -10,8 +10,10 @@ import {
   Text,
   Image,
   SafeAreaView,
+  StatusBar,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { useAuth, useUser } from "@clerk/clerk-expo";
 
 const Beth = () => {
   const [messages, setMessages] = useState([]);
@@ -21,14 +23,19 @@ const Beth = () => {
   const handlePress = () => {
     navigation.navigate("ProfileScreen");
   };
+  const { isLoaded, signOut } = useAuth();
+  const { isSignedIn, user } = useUser();
+  if (!isLoaded || !isSignedIn) {
+    return null;
+  }
 
   useEffect(() => {
     setMessages([
       {
         _id: 1,
-        text: "Hello! My name is Beth, i am a medical professional you can text me if you need medical Help.",
+        text: `Hi ${user.firstName} ${user.lastName} 👋\nMy name is Beth, i am a medical professional, text me if you need medical Help.`,
         createdAt: new Date(),
-        user: { _id: 2, name: "User" },
+        user: { _id: 2, name: "Beth" },
       },
     ]);
   }, []);
@@ -90,6 +97,7 @@ const Beth = () => {
         {...props}
         containerStyle={styles.inputToolbarContainer}
         primaryStyle={styles.inputToolbarPrimary}
+        textInputStyle={{ color: "white" }}
       />
     );
   };
@@ -97,6 +105,7 @@ const Beth = () => {
   return (
     <View style={{ flex: 1, backgroundColor: "black" }}>
       <SafeAreaView style={styles.HeaderContainer}>
+        <StatusBar hidden />
         <TouchableOpacity style={styles.btnContainer} onPress={handlePress}>
           <Image
             source={{
@@ -108,7 +117,7 @@ const Beth = () => {
         </TouchableOpacity>
         <TouchableOpacity onPress={handlePress}>
           <Text style={styles.HelloText}>Beth AI</Text>
-          <Text style={styles.descText1}>Welcome to Stride 👋 </Text>
+          <Text style={styles.descText1}>Online </Text>
         </TouchableOpacity>
       </SafeAreaView>
       <GiftedChat
@@ -120,7 +129,7 @@ const Beth = () => {
             {...props}
             wrapperStyle={{
               left: {
-                backgroundColor: "#333", // Dark background color for user messages
+                backgroundColor: "#141518", // Dark background color for user messages
                 borderRadius: "6",
                 padding: 7,
               },
@@ -163,40 +172,45 @@ const styles = StyleSheet.create({
   HeaderContainer: {
     display: "flex",
     flexDirection: "row",
+
+    // alignSelf: "left",
     // justifyContent: "space-between",
     // marginLeft: "10",
   },
   HelloText: {
     color: "white",
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 700,
     textAlign: "center",
-    paddingBottom: 7,
+    paddingBottom: 1,
   },
 
   descText1: {
     color: "#898A8B",
-    fontSize: 13,
+    fontSize: 11,
     fontWeight: 600,
-    textAlign: "center",
+    textAlign: "left",
     paddingBottom: 20,
     paddingLeft: 0,
   },
   btnImg: {
-    marginLeft: 4,
+    marginLeft: 30,
+    marginRight: 10,
     height: 40,
     width: 40,
     resizeMode: "contain",
     borderRadius: 30,
+    // alignSelf: "center",
   },
   inputToolbarContainer: {
     borderTopWidth: StyleSheet.hairlineWidth,
     borderTopColor: "#b2b2b2",
-    backgroundColor: "gray",
+    backgroundColor: "#222",
     padding: 2,
   },
   inputToolbarPrimary: {
     alignItems: "center",
+    color: "white",
   },
 });
 

@@ -73,17 +73,6 @@ const styles = StyleSheet.create({
     right: 0,
   },
 
-  // ButtonContainer: {
-  //   position: "absolute",
-  //   backgroundColor: "#E53F71",
-  //   bottom: 35,
-  //   width: "90%",
-  //   alignSelf: "center",
-  //   padding: 25,
-  //   borderRadius: 10,
-  //   alignItems: "center",
-  // },
-
   ButtonContainer: {
     backgroundColor: "#171515",
     width: "90%",
@@ -111,14 +100,13 @@ const styles = StyleSheet.create({
   ButtonText: {
     fontSize: 14,
     color: "#fff",
-    fontWeight: 700,
+    // fontWeight: 700,
     alignSelf: "center",
   },
 
   mainText: {
     color: "white",
     fontSize: 26,
-    fontWeight: 600,
     bottom: 210,
     width: "90%",
     padding: 25,
@@ -129,7 +117,6 @@ const styles = StyleSheet.create({
   subText: {
     color: "white",
     fontSize: 15,
-    fontWeight: 400,
     bottom: 170,
     width: "90%",
     padding: 25,

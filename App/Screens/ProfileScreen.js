@@ -297,7 +297,7 @@ const styles = StyleSheet.create({
   HelloText: {
     color: "white",
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 700,
     textAlign: "left",
     paddingBottom: 7,
   },

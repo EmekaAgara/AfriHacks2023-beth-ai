@@ -85,6 +85,8 @@ export default function SignupScreen() {
       });
 
       await setActive({ session: completeSignUp.createdSessionId });
+      Alert.alert("Welldone 🤙", "Your account has been created");
+      navigation.navigate("AuthScreen");
     } catch (err) {
       if (err.errors && err.errors.length > 0) {
         // Access the first error message in the array
@@ -270,7 +272,7 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: 700,
     color: "white",
     margin: 10,
     alignSelf: "flex-start",

@@ -114,14 +114,12 @@ const styles = StyleSheet.create({
   ButtonText: {
     fontSize: 14,
     color: "#fff",
-    fontWeight: 700,
     alignSelf: "center",
   },
 
   mainText: {
     color: "white",
     fontSize: 26,
-    fontWeight: 600,
     bottom: 210,
     width: "90%",
     padding: 25,
@@ -132,7 +130,6 @@ const styles = StyleSheet.create({
   subText: {
     color: "white",
     fontSize: 15,
-    fontWeight: 400,
     bottom: 170,
     width: "90%",
     padding: 25,

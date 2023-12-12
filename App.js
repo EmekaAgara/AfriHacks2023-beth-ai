@@ -39,6 +39,7 @@ export default function App() {
   return (
     <ClerkProvider
       tokenCache={tokenCache}
+      // publishableKey={"pk_test_aWRlYWwtdXJjaGluLTg3LmNsZXJrLmFjY291bnRzLmRldiQ"}
       publishableKey={"pk_test_c2FmZS1nYXRvci03MS5jbGVyay5hY2NvdW50cy5kZXYk"}
     >
       <NavigationContainer>

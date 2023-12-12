@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   container_tertiary: {},
 
   text: {
-    fontWeight: "bold",
+    fontWeight: 700,
     color: "white",
   },
 
