@@ -34,8 +34,10 @@ export default function HomeScreen() {
     <View style={styles.container} behavior="padding">
       <View style={styles.HeaderContainer}>
         <TouchableOpacity onPress={handlePress}>
-          <Text style={styles.HelloText}>Hello {user.firstName}</Text>
-          <Text style={styles.descText1}>This is Beth 👋 </Text>
+          <Text style={styles.HelloText}>
+            Hello {user.firstName} {user.lastName} 👋
+          </Text>
+          <Text style={styles.descText1}>How are you Feeling today ? </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.btnContainer} onPress={handlePress}>
@@ -59,7 +61,7 @@ export default function HomeScreen() {
           inputMode="email"
           value={emailAddress}
           onChangeText={setEmailAddress}
-          placeholder={"Search for a Specialist near you ?"}
+          placeholder={"Search for a Hospital or Specialist near you"}
           placeholderTextColor="#818589"
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
@@ -93,7 +95,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.1,
     borderRadius: 5,
     paddingHorizontal: 8,
-    marginVertical: 20,
+    marginVertical: 8,
     // padding: 18,
     borderWidth: 1,
     display: "flex",
