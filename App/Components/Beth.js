@@ -28,7 +28,7 @@ const Beth = () => {
         _id: 1,
         text: "Hello! My name is Beth, i am a medical professional you can text me if you need medical Help.",
         createdAt: new Date(),
-        user: { _id: 2, name: "OpenAI" },
+        user: { _id: 2, name: "User" },
       },
     ]);
   }, []);
@@ -42,16 +42,19 @@ const Beth = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://api.openai.com/v1/engines/text-davinci-002/completions",
+        // "https://api.openai.com/v1/engines/text-davinci-002/completions",
+        "https://api.openai.com/v1/completions",
         {
-          prompt: `Your name is Beth AI. As a medical professional, respond to the user's question with a coherent and informative answer and don't give advice if they dont ask:\n${userMessage}`,
+          model: "text-davinci-003",
+          // prompt: `Your name is Beth AI. As a medical professional, respond to the user's question with a coherent and informative answer and don't give advice if they dont ask:\n${userMessage}`,
+          prompt: `Your name is Beth AI, respond like a casual conversation if no medical question is asked and respond to the user's question with a coherent and informative short answer As a medical professional:\nTopic:${userMessage}\n`,
           temperature: 0.7,
           max_tokens: 150,
         },
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
           },
         }
       );

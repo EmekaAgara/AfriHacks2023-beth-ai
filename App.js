@@ -1,5 +1,3 @@
-import { useCallback } from "react";
-import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import "react-native-gesture-handler";
@@ -10,10 +8,8 @@ import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import LoginScreen from "./App/Screens/LoginScreen";
 import SignupScreen from "./App/Screens/SignupScreen";
 import HomeScreen from "./App/Screens/HomeScreen";
-import SplashScreen from "./App/Screens/SplashScreen";
 import SplashScreen1 from "./App/Screens/Splashscreen1";
 import SplashScreen2 from "./App/Screens/Splashscreen2";
-import Welcome from "./App/Screens/Welcome";
 import AuthScreen from "./App/Screens/AuthScreen";
 import * as SecureStore from "expo-secure-store";
 import ProfileScreen from "./App/Screens/ProfileScreen";
@@ -21,25 +17,6 @@ import BethScreen from "./App/Screens/BethScreen";
 
 export default function App() {
   const Stack = createStackNavigator();
-  const [fontsLoaded] = useFonts({
-    // Manrope: require("../assets/fonts/Manrope-Bold.ttf"),
-    Manrope: require("./App/assets/fonts/Manrope-Bold.ttf"),
-    "Manrope-ExtraBold": require("./App/assets/fonts/Manrope-ExtraBold.ttf"),
-    "Manrope-ExtraLight": require("./App/assets/fonts/Manrope-ExtraLight.ttf"),
-    "Manrope-Light": require("./App/assets/fonts/Manrope-Light.ttf"),
-    "Manrope-Medium": require("./App/assets/fonts/Manrope-Medium.ttf"),
-    "Manrope-Regular": require("./App/assets/fonts/Manrope-Regular.ttf"),
-    "Manrope-SemiBold": require("./App/assets/fonts/Manrope-SemiBold.ttf"),
-  });
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
-
-  if (!fontsLoaded) {
-    return null;
-  }
 
   const tokenCache = {
     async getToken(key) {
@@ -66,14 +43,6 @@ export default function App() {
       <NavigationContainer>
         <SafeAreaProvider>
           <Stack.Navigator>
-            {/* <Stack.Screen
-                name="SplashScreen"
-                component={SplashScreen}
-                options={{
-                  headerShown: false,
-                }}
-              /> */}
-
             <Stack.Screen
               name="SplashScreen1"
               component={SplashScreen1}
@@ -90,29 +59,6 @@ export default function App() {
               }}
             />
 
-            {/* <Stack.Screen
-                  name="SplashScreen3"
-                  component={SplashScreen3}
-                  options={{
-                    headerShown: false,
-                  }}
-                />
-
-                <Stack.Screen
-                  name="SplashScreen4"
-                  component={SplashScreen4}
-                  options={{
-                    headerShown: false,
-                  }}
-                /> */}
-
-            <Stack.Screen
-              name="Welcome"
-              component={Welcome}
-              options={{
-                headerShown: false,
-              }}
-            />
             <Stack.Screen
               name="AuthScreen"
               component={AuthScreen}
@@ -138,6 +84,13 @@ export default function App() {
             <Stack.Screen
               name="ProfileScreen"
               component={ProfileScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="HomeScreen"
+              component={HomeScreen}
               options={{
                 headerShown: false,
               }}

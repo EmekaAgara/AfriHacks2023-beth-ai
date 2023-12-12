@@ -4,7 +4,6 @@ import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import HomeScreen from "./HomeScreen";
 import LoginScreen from "./LoginScreen";
 import { NavigationContainer } from "@react-navigation/native";
-import TabNavigation from "../Navigations/TabNavigation";
 import ProfileScreen from "./ProfileScreen";
 
 export default function AuthScreen() {
