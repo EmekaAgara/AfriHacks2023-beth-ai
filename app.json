@@ -15,16 +15,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.realagara.beth"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/beth.png",
         "backgroundColor": "#000000"
-      }
+      },
+      "package": "com.realagara.beth"
     },
     "web": {
       "favicon": "./assets/beth.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6edbdcaf-8a5e-43b4-9e69-9393fc13dbdb"
+      }
     }
   }
 }
